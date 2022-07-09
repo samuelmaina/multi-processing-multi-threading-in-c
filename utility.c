@@ -14,6 +14,12 @@ struct record
 
 const int no_of_records = 10000;
 
+void bubble_sort(struct record *data);
+
+void printContent(struct record *data);
+
+void read_data(struct record *);
+
 int main(void)
 {
 
@@ -25,6 +31,13 @@ int main(void)
     clock_t start = clock();
     bubble_sort(data);
     clock_t end = clock();
+
+    // print the content of the data array to see that it is indeed sorted.
+    printContent(data);
+
+    double time_taken = (double)(end - start);
+    printf("%f milliseconds were spent on bubble sorting the data \n", time_taken);
+    exit(0);
 }
 
 void read_data(struct record *data)
@@ -91,5 +104,15 @@ void bubble_sort(struct record *arr)
                 arr[y + 1] = temp;
             }
         }
+    }
+}
+
+void printContent(struct record *data)
+{
+    printf("Name \t\t\t\t Number\t\n");
+    printf("___________________________________\n");
+    for (int i = 0; i < no_of_records; i++)
+    {
+        printf("%s \t %d\t\n", data[i].name, data[i].no);
     }
 }
