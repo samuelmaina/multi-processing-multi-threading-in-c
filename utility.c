@@ -19,12 +19,12 @@ int main(void)
 
     struct record data[no_of_records];
 
+    // read the data
+    read_data(data);
+
     clock_t start = clock();
     bubble_sort(data);
     clock_t end = clock();
-
-    // read the data
-    read_data(data);
 }
 
 void read_data(struct record *data)
