@@ -19,6 +19,10 @@ int main(void)
 
     struct record data[no_of_records];
 
+    clock_t start = clock();
+    bubble_sort(data);
+    clock_t end = clock();
+
     // read the data
     read_data(data);
 }
@@ -41,7 +45,6 @@ void read_data(struct record *data)
         {
             column = 0;
             row++;
-            // Splitting the data
             char *value = strtok(buffer, ", ");
 
             while (value)
@@ -66,7 +69,27 @@ void read_data(struct record *data)
             index++;
         }
 
-        // Close the file
         fclose(fp);
+    }
+}
+
+void bubble_sort(struct record *arr)
+{
+    for (int x = 0; x < no_of_records; x++)
+    {
+
+        for (int y = 0; y < no_of_records - 1; y++)
+        {
+
+            if (arr[y].no > arr[y + 1].no)
+            {
+
+                struct record temp = arr[y];
+
+                arr[y] = arr[y + 1];
+
+                arr[y + 1] = temp;
+            }
+        }
     }
 }
