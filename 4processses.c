@@ -20,6 +20,7 @@ int main(void)
     p2 = getpid();
     p3 = getpid();
     p4 = getpid();
+    p5 = getpid();
 
     pp = getppid();
     printf("Driver PID: %d   Driver PPID: %d \n", p1, pp);
@@ -78,7 +79,11 @@ int main(void)
 
         bubble_sort(what_to_sort);
     }
-
+    // perform the comulative sorting of the sorted sub-arrays
+    if (p5 == 0)
+    {
+        bubble_sort(data)
+    }
     if (pp == 0)
     {
         read_data(data);

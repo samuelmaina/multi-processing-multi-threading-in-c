@@ -18,12 +18,18 @@ int main(void)
 	printf("Driver Time: %s\n", ctime(&t));
 	p1 = getpid();
 	p2 = getpid();
+	p3 = getpid();
+
 	pp = getppid();
 	printf("Driver PID: %d   Driver PPID: %d \n", p1, pp);
 	p1 = fork();
 	p2 = fork();
 
 	clock_t start = clock();
+	if (p3 == 0)
+	{
+		bubble_sort(data)
+	}
 
 	if (p1 == 0)
 	{

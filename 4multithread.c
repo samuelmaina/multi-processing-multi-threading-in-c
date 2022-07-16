@@ -33,6 +33,7 @@ void solve_threaded()
 
         if (pthread_create(&(threads[i]), NULL, bubble_sort, (void *)&thread_num[i]))
         {
+            bubble_sort(data);
             printf("ERROR: Thread creation failed\n");
             exit(EXIT_FAILURE);
         }

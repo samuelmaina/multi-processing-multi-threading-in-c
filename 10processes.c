@@ -26,6 +26,7 @@ int main(void)
     p8 = getpid();
     p9 = getpid();
     p10 = getpid();
+    p11 = getpid();
 
     pp = getppid();
     printf("Driver PID: %d   Driver PPID: %d \n", p1, pp);
@@ -34,6 +35,10 @@ int main(void)
 
     clock_t start = clock();
 
+    if (p11 == 0)
+    {
+        bubble_sort(data);
+    }
     if (p1 == 0)
     {
         int end = no_of_records / 10;
